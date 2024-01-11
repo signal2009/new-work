@@ -1,0 +1,15 @@
+@Library(['luigi-shared-library', 'pipeline-library'])_
+
+def appName = "coreactivate_merchant_client"
+       
+runNodeMultiBranchJobTemplate appName: "${appName}",
+        teamName: 'launchpad',
+        xldPackageIdSuffix: "launchpad/ui/${appName}",
+        checkmarxProjectName: "${appName}",
+        checkmarxTeamPath: "Launchpad\\LaunchpadUI",
+        blackduckProjectName: "${appName}_30000440",
+        blackduckProjectVersion: "sandbox",
+        blackduckBuc: "30000441",
+        blackduckFiles: "src",
+        blackduckDetectScriptUrl: "https://detect.synopsys.com/detect8.sh",
+        blackduckCredId: "SVC_blackduck1"
