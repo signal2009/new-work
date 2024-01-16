@@ -1,0 +1,47 @@
+creating a new branch to stash his job
+
+git checkout -b tempbranch
+
+
+Git Merge Master into Branch
+contents previous up next index
+20201029 To re-synchronise a branch with updates that have been made to the main branch on the repository, first ensure the local main branch has been updated using a checkout and pull for the main branch. Then checkout the branch of interest and merge from the updated local main. We can then push the merges back to the remote repository's version of the branch. The commits are those that were committed by others to the remote repository's main branch.
+
+$ git checkout main
+$ git pull
+$ git checkout validator
+$ git merge main
+$ git push
+Notice that we could skip the first two lines and change the merge to merge origin/main to also effect a merge from the remote main into the current branch. This will not then update the local copy of main.
+
+$ git checkout validator
+$ git merge origin/main
+$ git push
+
+
+merge your master into the cureent branch
+git conflict
+
+do the merge on your local and resolve the conflict
+he added the whole source dir
+
+fix the conflict
+
+git add .\source\
+
+git commit
+
+the git merge your mainbranch into the cureent branch
+
+
+The difference between git pull origin/main and git pull origin main lies in the branch name specified in the command.
+
+git pull origin/main:
+
+In this command, you are attempting to pull changes from the remote repository (origin) for a branch named main.
+This syntax is typically not correct in Git because branch names are usually separated by a forward slash (/), not a dot (.). The correct syntax for pulling changes from the remote main branch would be git pull origin main.
+git pull origin main:
+
+This command is the correct syntax for pulling changes from the remote repository (origin) for the main branch.
+It fetches changes from the remote main branch and automatically merges them into your local main branch.
+In summary, the correct and commonly used syntax is git pull origin main, where origin is the remote repository name, and main is the branch name. The use of a dot (.) in branch names is not standard in Git, and the correct separator is a forward slash (/).
